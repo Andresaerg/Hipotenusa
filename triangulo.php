@@ -57,7 +57,7 @@
         $co = $_POST['co'];
         $h = null;
 
-        if(!empty($ca) && !empty($co)){
+        if(!empty($ca) && !empty($co) && $ca>0 && $co>0){
 
                 $h = sqrt(pow($ca,2) + pow($co,2));
                 echo "<h2 align='center'> Datos Ingresados: </h2>";
@@ -65,11 +65,15 @@
                 echo "<h4 align='center'> Cateto Opuesto = " .$co."</h4>";
                 echo "<h4 align='center'> Por lo tanto la Hipotenusa es = ".$h."<h4>";
 
-        }
+        } elseif(!empty($ca) && !empty($co) && $ca<0 && $co<0)
 
+            echo "<h2 align='Center'> Ambos datos deben ser positivos </h2>";
+        
         else
 
         echo "<h2 align='center'> Por favor ingrese ambos datos </h2>";
+        
+        
 
     }
 
